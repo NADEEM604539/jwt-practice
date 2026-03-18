@@ -1,4 +1,4 @@
-import { signToken } from "../jwt";
+import { signToken, verifyToken } from "../jwt";
 import { PAYLOAD } from "../model/payload";
 
 
@@ -9,3 +9,7 @@ export async function POST(request:PAYLOAD){
    return Response.json(token);
 }
 
+
+export async function GET(){
+    return Response.json(verifyToken('ksflasfjksadf')); 
+}
