@@ -17,7 +17,8 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
 
-    const res = login({ email, password })
+    const res= await login({ email, password })
+    localStorage.setItem("token", res);
     router.push('/dashboard')
 
   };

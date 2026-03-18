@@ -8,7 +8,9 @@ export function signToken(payload: PAYLOAD) {
 
 export function verifyToken(token: string) {
     try {
-        return jwt.verify(token, SECRET);
+        const data= jwt.verify(token, SECRET);
+        console.log(data)
+        return data;
     } catch {
         return null;
     }
